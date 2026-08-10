@@ -1,54 +1,70 @@
+#include <cmath>
 #include <iostream>
 
 using namespace std;
 
 int main() {
-    cout << "Hello! My name is Ahmad and this is my Github Practice Task.\n" << endl;
-    cout << "--- Simple Calculator ---" << endl;
-    
-    char op;
-    double num1, num2;
+  cout << "Hello! My name is Ahmad and this is my Github Practice Task.\n"
+       << endl;
+  cout << "--- Simple Calculator ---" << endl;
 
-    cout << "Enter first number: ";
-    if (!(cin >> num1)) {
-        cout << "Invalid input." << endl;
-        return 1;
+  char op;
+  double num1, num2;
+
+  cout << "Enter first number: ";
+  if (!(cin >> num1)) {
+    cout << "Invalid input." << endl;
+    return 1;
+  }
+
+  cout << "Enter operator (+, -, *, /, %): ";
+  if (!(cin >> op)) {
+    cout << "Invalid input." << endl;
+    return 1;
+  }
+
+  cout << "Enter second number: ";
+  if (!(cin >> num2)) {
+    cout << "Invalid input." << endl;
+    return 1;
+  }
+
+  cout << "\nResult: ";
+
+  switch (op) {
+
+  case '+':
+    cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
+    break;
+
+  case '-':
+    cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
+    break;
+
+  case '*':
+    cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+    break;
+
+  case '/':
+    if (num2 != 0.0) {
+      cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
+    } else {
+      cout << "Error! Division by zero." << endl;
     }
+    break;
 
-    cout << "Enter operator (+, -, *, /): ";
-    if (!(cin >> op)) {
-        cout << "Invalid input." << endl;
-        return 1;
+  case '%':
+    if (num2 != 0.0) {
+      cout << num1 << " % " << num2 << " = " << fmod(num1, num2) << endl;
+    } else {
+      cout << "Error! Division by zero." << endl;
     }
+    break;
 
-    cout << "Enter second number: ";
-    if (!(cin >> num2)) {
-        cout << "Invalid input." << endl;
-        return 1;
-    }
+  default:
+    cout << "Error! Invalid operator." << endl;
+    break;
+  }
 
-    cout << "\nResult: ";
-    switch (op) {
-        case '+':
-            cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
-            break;
-        case '-':
-            cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
-            break;
-        case '*':
-            cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
-            break;
-        case '/':
-            if (num2 != 0.0) {
-                cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
-            } else {
-                cout << "Error! Division by zero." << endl;
-            }
-            break;
-        default:
-            cout << "Error! Invalid operator." << endl;
-            break;
-    }
-
-    return 0;
+  return 0;
 }

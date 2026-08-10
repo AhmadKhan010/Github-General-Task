@@ -9,6 +9,7 @@ The program is a **Simple Calculator** that can perform basic arithmetic operati
 - Subtraction (`-`)
 - Multiplication (`*`)
 - Division (`/`)
+- Modulo (`%`)
 
 It interactively asks the user for two numbers and an operator, and then displays the calculated result. It also handles basic errors, such as division by zero.
 
